@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bataille Navale - Robot Intelligent</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Bataille Navale</h1>
+    
+    <div id="game-container">
+        <!-- Panneau latéral / Contrôles -->
+        <div id="sidebar">
+            <h2>Options & Réserve</h2>
+            <p id="instruction">Cliquez sur une case de votre grille pour placer vos bateaux.</p>
+            <button id="btn-orientation" onclick="toggleOrientation()">Orientation: Horizontale</button>
+            <button id="btn-auto" onclick="placementAleatoireJoueur()">Placement Aléatoire</button>
+            
+            <div id="ships-to-place">
+                <h3>Bateaux à placer :</h3>
+                <ul id="ship-list">
+                    <li id="ship-4">Porte-avion (4 cases)</li>
+                    <li id="ship-3a">Frégate (3 cases)</li>
+                    <li id="ship-3b">Patrouilleur (3 cases)</li>
+                    <li id="ship-2">Chasseur de mines (2 cases)</li>
+                    <li id="ship-1">Sous-marin (1 case)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Zone des grilles -->
+        <div id="boards-container">
+            <div class="board-wrapper">
+                <h3>Votre Grille</h3>
+                <div id="player-board" class="board"></div>
+            </div>
+
+            <div class="board-wrapper">
+                <h3>Grille Ennemie</h3>
+                <div id="robot-board" class="board"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Message d'information -->
+    <div id="status-message">Placez tous vos bateaux pour commencer !</div>
+
+    <!-- Écran de Fin (Modal Animation) -->
+    <div id="modal-overlay" class="hidden">
+        <div id="modal-content">
+            <h2 id="modal-title"></h2>
+            <canvas id="anim-canvas" width="500" height="300"></canvas>
+            <br>
+            <button onclick="restartGame()">Rejouer une partie</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
